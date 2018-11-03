@@ -1,0 +1,13 @@
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\LControl_Escolar.dll
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\LControl_Escolar.pdb
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\LConexion.dll
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\LConexion.pdb
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\MySql.Data.xml
+E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csprojAssemblyReference.cache
+E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csproj.CoreCompileInputs.cache
+E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csproj.CopyComplete
+E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.dll
+E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.pdb
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.dll
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\MySql.Data.dll
+E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.xml

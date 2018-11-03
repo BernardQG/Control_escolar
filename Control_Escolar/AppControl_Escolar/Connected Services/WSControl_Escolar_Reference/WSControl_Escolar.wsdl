@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="conexionMysql">
+        <s:complexType />
+      </s:element>
+      <s:element name="conexionMysqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conexionMysqlResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="conexionDataBase">
+        <s:complexType />
+      </s:element>
+      <s:element name="conexionDataBaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conexionDataBaseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioLogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Alumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inscripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_AlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Carrera">
+        <s:complexType />
+      </s:element>
+      <s:element name="SELECT_CarreraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_CarreraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_IAlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Pais">
+        <s:complexType />
+      </s:element>
+      <s:element name="SELECT_PaisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_PaisResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Estado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdPais" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_EstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_EstadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Municipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_MunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_MunicipioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Acentamiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdMunicipio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_AcentamientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AcentamientoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_CP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_CPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_CPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_Alumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_AlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UPDATE_Sesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_SesionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UPDATE_Inscripcion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdAlumno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Estatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_InscripcionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UPDATE_Alumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdAlumno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Celular" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdAcentamiento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdCarrera" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_inscripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_AlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="INSERT_Alumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Celular" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdAcentamiento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdCarrera" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_inscripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_AlumnoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="conexionMysqlSoapIn">
+    <wsdl:part name="parameters" element="tns:conexionMysql" />
+  </wsdl:message>
+  <wsdl:message name="conexionMysqlSoapOut">
+    <wsdl:part name="parameters" element="tns:conexionMysqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="conexionDataBaseSoapIn">
+    <wsdl:part name="parameters" element="tns:conexionDataBase" />
+  </wsdl:message>
+  <wsdl:message name="conexionDataBaseSoapOut">
+    <wsdl:part name="parameters" element="tns:conexionDataBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioLog" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:Usuario" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Alumno" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CarreraSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Carrera" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CarreraSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_CarreraResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_IAlumno" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_IAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_PaisSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Pais" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_PaisSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_PaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_EstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Estado" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_EstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_EstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_MunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Municipio" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_MunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_MunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AcentamientoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Acentamiento" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AcentamientoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_AcentamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CPSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_CP" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CPSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_CPResponse" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_AlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:DELETE_Alumno" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_AlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:DELETE_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_SesionSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Sesion" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_SesionSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_SesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_InscripcionSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Inscripcion" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_InscripcionSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_InscripcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_AlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Alumno" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_AlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_AlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_Alumno" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_AlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSControl_EscolarSoap">
+    <wsdl:operation name="conexionMysql">
+      <wsdl:input message="tns:conexionMysqlSoapIn" />
+      <wsdl:output message="tns:conexionMysqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="conexionDataBase">
+      <wsdl:input message="tns:conexionDataBaseSoapIn" />
+      <wsdl:output message="tns:conexionDataBaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioLog">
+      <wsdl:input message="tns:UsuarioLogSoapIn" />
+      <wsdl:output message="tns:UsuarioLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usuario">
+      <wsdl:input message="tns:UsuarioSoapIn" />
+      <wsdl:output message="tns:UsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <wsdl:input message="tns:SELECT_AlumnoSoapIn" />
+      <wsdl:output message="tns:SELECT_AlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <wsdl:input message="tns:SELECT_CarreraSoapIn" />
+      <wsdl:output message="tns:SELECT_CarreraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <wsdl:input message="tns:SELECT_IAlumnoSoapIn" />
+      <wsdl:output message="tns:SELECT_IAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Pais">
+      <wsdl:input message="tns:SELECT_PaisSoapIn" />
+      <wsdl:output message="tns:SELECT_PaisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Estado">
+      <wsdl:input message="tns:SELECT_EstadoSoapIn" />
+      <wsdl:output message="tns:SELECT_EstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Municipio">
+      <wsdl:input message="tns:SELECT_MunicipioSoapIn" />
+      <wsdl:output message="tns:SELECT_MunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Acentamiento">
+      <wsdl:input message="tns:SELECT_AcentamientoSoapIn" />
+      <wsdl:output message="tns:SELECT_AcentamientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_CP">
+      <wsdl:input message="tns:SELECT_CPSoapIn" />
+      <wsdl:output message="tns:SELECT_CPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Alumno">
+      <wsdl:input message="tns:DELETE_AlumnoSoapIn" />
+      <wsdl:output message="tns:DELETE_AlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Sesion">
+      <wsdl:input message="tns:UPDATE_SesionSoapIn" />
+      <wsdl:output message="tns:UPDATE_SesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Inscripcion">
+      <wsdl:input message="tns:UPDATE_InscripcionSoapIn" />
+      <wsdl:output message="tns:UPDATE_InscripcionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Alumno">
+      <wsdl:input message="tns:UPDATE_AlumnoSoapIn" />
+      <wsdl:output message="tns:UPDATE_AlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Alumno">
+      <wsdl:input message="tns:INSERT_AlumnoSoapIn" />
+      <wsdl:output message="tns:INSERT_AlumnoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSControl_EscolarSoap" type="tns:WSControl_EscolarSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conexionMysql">
+      <soap:operation soapAction="http://tempuri.org/conexionMysql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conexionDataBase">
+      <soap:operation soapAction="http://tempuri.org/conexionDataBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioLog">
+      <soap:operation soapAction="http://tempuri.org/UsuarioLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usuario">
+      <soap:operation soapAction="http://tempuri.org/Usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <soap:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Pais">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Pais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Estado">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Estado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Municipio">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Municipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Acentamiento">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Acentamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_CP">
+      <soap:operation soapAction="http://tempuri.org/SELECT_CP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Alumno">
+      <soap:operation soapAction="http://tempuri.org/DELETE_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Sesion">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Sesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Inscripcion">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Inscripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Alumno">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Alumno">
+      <soap:operation soapAction="http://tempuri.org/INSERT_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSControl_EscolarSoap12" type="tns:WSControl_EscolarSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conexionMysql">
+      <soap12:operation soapAction="http://tempuri.org/conexionMysql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conexionDataBase">
+      <soap12:operation soapAction="http://tempuri.org/conexionDataBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioLog">
+      <soap12:operation soapAction="http://tempuri.org/UsuarioLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usuario">
+      <soap12:operation soapAction="http://tempuri.org/Usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Pais">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Pais" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Estado">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Estado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Municipio">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Municipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Acentamiento">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Acentamiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_CP">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_CP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Alumno">
+      <soap12:operation soapAction="http://tempuri.org/DELETE_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Sesion">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Sesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Inscripcion">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Inscripcion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Alumno">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Alumno">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSControl_Escolar">
+    <wsdl:port name="WSControl_EscolarSoap" binding="tns:WSControl_EscolarSoap">
+      <soap:address location="http://localhost:49655/WSControl_Escolar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSControl_EscolarSoap12" binding="tns:WSControl_EscolarSoap12">
+      <soap12:address location="http://localhost:49655/WSControl_Escolar.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

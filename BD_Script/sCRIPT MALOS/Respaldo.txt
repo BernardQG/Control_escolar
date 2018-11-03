@@ -1,0 +1,200 @@
+DROP DATABASE IF EXISTS ControlEscolar;
+CREATE DATABASE ControlEscolar;
+USE ControlEscolar;
+
+CREATE TABLE Pais(
+	IdPais INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(25) NOT NULL,
+	Primary key(IdPais)
+);
+
+CREATE TABLE Estado(
+	IdEstado INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(25) NOT NULL,
+	IdPais INT NOT NULL,
+	Primary key(IdEstado),
+	Foreign key(IdPais) references Pais(IdPais)
+);
+
+CREATE TABLE Municipio(
+	IdMunicipio INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(25) NOT NULL,
+	CP SMALLINT,
+	IdEstado INT NOT NULL,
+	Primary key(IdMunicipio),
+	Foreign key(IdEstado) references Estado(IdEstado)
+);
+
+CREATE TABLE Contacto(
+	IdContacto INT NOT NULL AUTO_INCREMENT,
+	Direccion VARCHAR(50),
+	Numero VARCHAR(5),
+	Telefono NUMERIC(10,0),
+	Celular NUMERIC(10,0),
+	Correo VARCHAR(30),
+	IdMunicipio INT,
+	Primary key(IdContacto),
+	Foreign key(IdMunicipio) references Municipio(IdMunicipio)
+);
+CREATE TABLE Humano(
+	IdHumano INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(25) NOT NULL,
+	APaterno VARCHAR(25) NOT NULL,
+	AMaterno VARCHAR(25),
+	Fecha_nacimiento DATE NOT NULL,
+	Sexo VARCHAR(1),
+	Estatus BIT,
+	IdContacto INT,
+	Primary key (IdHumano),
+	Foreign key(IdContacto) references Contacto(IdContacto)	
+);
+
+CREATE TABLE Instituto(
+	IdInstituto INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(50),
+	IdContacto INT NOT NULL,
+	Primary key(IdInstituto),
+	Foreign key(Idcontacto) references Contaco(IdContacto)
+);
+
+CREATE TABLE Carrera(
+	IdCarrera INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(50) NOT NULL,
+	Estatus BIT NOT NULL,
+	IdInstituto INT NOT NULL,
+	Primary key(IdCarrera),
+	Foreign key(IdInstituto) references Instituto(IdInstituto)
+);
+
+CREATE TABLE Alumno(
+	IdAlumno INT NOT NULL AUTO_INCREMENT,
+	IdHumano INT NOT NULL,
+	IdCarrera INT NOT NULL,
+	Fecha_inscripcion DATE,
+	Primary key(IdAlumno),
+	Foreign key(IdHumano) references Humano(IdHumano),
+	Foreign key(IdCarrera) references Carrera(IdCarrera)
+);
+
+CREATE TABLE Profesor(
+	IdProfesor INT NOT NULL AUTO_INCREMENT,
+	IdHumano INT NOT NULL,
+	Especialidad VARCHAR(50),
+	Grado_estudios ENUM('Primaria','Segundaria','Preparatoria','Licenciatura','Maestria','Doctorado'),
+	Folio_titulo INT NOT NULL,
+	Sueldo_quincenal DOUBLE,
+	Primary key(IdProfesor),
+	Foreign key(IdHumano) references Humano(IdHumano)
+);
+
+CREATE TABLE Puesto(
+	IdPuesto INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(35) NOT NULL,
+	Descripcion VARCHAR(80),
+	Sueldo_quincenal DOUBLE,
+	Primary key(IdPuesto)	
+);
+
+CREATE TABLE Empleado(
+	IdEmpleado INT NOT NULL AUTO_INCREMENT,
+	IdHumano INT NOT NULL,
+	IdPuesto INT NOT NULL,
+	Primary key(IdEmpleado),
+	Foreign key(IdPuesto) references Puesto(IdPuesto)
+);
+
+CREATE TABLE Usuario(
+	IdUsuario INT NOT NULL AUTO_INCREMENT,
+	IdEmpleado INT NOT NULL,
+	Usuario VARCHAR(30) NOT NULL,
+	Password VARCHAR(30) NOT NULL,
+	Estatus BIT NOT NULL,
+	Primary key(IdUsuario),
+	Foreign key(IdEmpleado) references Empleado(IdEmpleado)
+);
+
+CREATE TABLE Periodo(
+	IdPeriodo INT NOT NULL AUTO_INCREMENT,
+	Fecha_inicio DATE NOT NULL,
+	Fecha_Fin DATE NOT NULL,
+	Primary key(IdPeriodo)
+);
+
+CREATE TABLE Inscripcion(
+	IdInscripcion INT NOT NULL AUTO_INCREMENT,
+	IdAlumno INT NOT NULL,
+	IdPeriodo INT NOT NULL,
+	Estatus BIT NOT NULL,
+	Primary key(IdInscripcion),
+	Foreign key(IdAlumno) references Alumno(IdAlumno),
+	Foreign key(IdPeriodo) references Periodo(IdPeriodo)
+);
+
+CREATE TABLE Materia(
+	IdMateria INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(45) NOT NULL,
+	Creditos INT NOT NULL,
+	Estatus BIT NOT NULL,
+	Primary key(IdMateria)
+);
+
+CREATE TABLE Grupo(
+	IdGrupo INT NOT NULL AUTO_INCREMENT,
+	IdMateria INT NOT NULL,
+	IdPeriodo INT NOT NULL,
+	IdProfesor INT NOT NULL,
+	Estatus BIT NOT NULL,
+	Primary key(IdGrupo), 
+	Foreign key(IdMateria) references Materia(IdMateria),
+	Foreign key(IdPeriodo) references Periodo(IdPeriodo),
+	Foreign key(IdProfesor) references Profesor(IdProfesor)
+);
+
+CREATE TABLE Historial_alumno(
+	IdAlumno INT NOT NULL,
+	Calificacion DOUBLE NOT NULL,
+	Oportunidad TINYINT,
+	IdGrupo INT NOT NULL,
+	Foreign key(IdAlumno) references Alumno(IdAlumno),
+	Foreign key(IdGrupo) references Grupo(IdGrupo)
+);
+
+CREATE TABLE Tabla(
+	IdTabla INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(20) NOT NULL,
+	Primary key(IdTabla)
+);
+
+CREATE TABLE Auditoria(
+	IdAuditoria INT NOT NULL AUTO_INCREMENT,
+	Accion ENUM('Insert','Delete','Update'),
+	IdTabla INT NOT NULL,
+	Atributo VARCHAR(20),
+	Valor_viejo VARCHAR(60),
+	Valor_Nuevo VARCHAR(60),
+	IdUsuario INT NOT NULL,
+	Primary key(IdAuditoria),
+	Foreign key(IdTabla) references Tabla(IdTabla),
+	Foreign key(IdUsuario) references Usuario(IdUsuario)
+);
+
+CREATE TABLE Tipo_beca(
+	IdTipo_beca INT NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(25) NOT NULL, 
+	Monto_mensual DOUBLE NOT NULL,
+	Estatus BIT NOT NULL,
+	Primary key(IdTipo_beca)
+);
+
+CREATE TABLE Beca(
+	IdBeca INT NOT NULL AUTO_INCREMENT,
+	IdAlumno INT NOT NULL,
+	IdTipo_beca INT NOT NULL,
+	IdPeriodo INT NOT NULL,
+	Estatus BIT,
+	Primary key(IdBeca),
+	Foreign key(IdAlumno) references Alumno(IdAlumno),
+	Foreign key(IdTipo_beca) references Tipo_beca(IdTipo_beca),
+	Foreign key(IdPeriodo) references Periodo(IdPeriodo)
+);
+

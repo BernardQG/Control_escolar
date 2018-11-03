@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="AppControl_Escolar.ucLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppControl_Escolar"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="355" Width="270">
+    <Grid>
+        <Rectangle RadiusY="12" RadiusX="12" Fill="#FF2E2E2E"/>
+        <StackPanel Margin="20 0">
+            <materialDesign:PackIcon Kind="AccountCircle"  Width="100" Height="100" Foreground="White"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Text="Iniciar Sesión" Foreground="WhiteSmoke" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+            <StackPanel HorizontalAlignment="Center" Margin="0,10" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Margin="0,15,0,0" Foreground="WhiteSmoke"/>
+                <TextBox x:Name="txtbUsuario" materialDesign:HintAssist.Hint="Usuario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" Margin="5" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center" Margin="0,15,0,0" Foreground="WhiteSmoke"/>
+                <PasswordBox x:Name="txtbPassword" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Width="200" Margin="5" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+            </StackPanel>
+            <TextBlock x:Name="txtbOlvido" Text="Olvidé mi contraseña" FontSize="11" Foreground="#FF51FD40" Margin="0 5" HorizontalAlignment="Right"/>
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Continuar" Width="130" Margin="0,10" FontSize="18" x:Name="btnContinuar" Background="#FF3D96B8"/>
+
+        </StackPanel>
+        <Grid Width="210" Height="105" x:Name="gRecuperarPassword" Visibility="Collapsed">
+            <Rectangle RadiusY="10" RadiusX="10" Fill="#FF747474"/>
+            <StackPanel Margin="10 5">
+            <TextBlock  Text="Recuperar contraseña" Margin="2" HorizontalAlignment="Center" FontSize="10" Foreground="White"/>                            
+            <TextBlock  Text="Enviar contraseña al correo?" Margin="2" HorizontalAlignment="Center"/>
+            <TextBlock Foreground="White" x:Name="txtbDestinatario" Text="default@hotmail.com " Margin="2" HorizontalAlignment="Center" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                    <Button x:Name="btnEnviar" Width="25" Height="25" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Margin="2 2 3 2" Background="#FF3D96B8">
+                        <materialDesign:PackIcon Kind="Send" Height="14" Width="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Grid Width="30"/>
+                    <Button x:Name="btnCancelar" Width="25" Height="25" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Margin="2 2 3 2" Background="#FF3D96B8">
+                        <materialDesign:PackIcon Kind="Cancel" Height="14" Width="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>
