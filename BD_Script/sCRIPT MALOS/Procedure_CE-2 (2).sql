@@ -11,6 +11,13 @@ BEGIN
 END $$
 DELIMITER ;
 
+
+
+
+/* ========= Consultas para la tabla Usuario ========= */
+
+
+
 DROP PROCEDURE IF EXISTS SP_SELECT_UsuarioLog;
 DELIMITER $$
 CREATE PROCEDURE SP_SELECT_UsuarioLog(_Usuario VARCHAR(30),_Password VARCHAR(30),_Llave VARCHAR(5))
@@ -28,12 +35,29 @@ DELIMITER $$
 CREATE PROCEDURE SP_SELECT_Usuario(_Usuario VARCHAR(30),_Llave VARCHAR(5))
 BEGIN
 
-	SELECT IdUsuario,IdEmpleado,Usuario,AES_DECRYPT(Password,_Llave),Correo FROM Usuario WHERE
-	Usuario =_Usuario;
+	SELECT U.IdUsuario,U.IdEmpleado,U.Usuario,AES_DECRYPT(Password,'BQG') as 'Contraseña',H.Correo as Correo FROM Usuario AS U
+	INNER JOIN Empleado AS E ON U.IdEmpleado=E.IdEmpleado
+	INNER JOIN Humano AS H ON E.IdHumano = H.IdHumano
+	WHERE
+	U.Usuario =_Usuario;
+
 
 END $$
 DELIMITER ;
 
+
+DROP PROCEDURE IF EXISTS SP_SELECT_Admin;
+DELIMITER $$
+CREATE PROCEDURE SP_SELECT_Admin()
+BEGIN
+
+	DECLARE _IdUsuario INT;
+	SET _IdUsuario = (Select IdUsuario FROM Sesion LIMIT 1);
+	SELECT * FROM Usuario WHERE IdUsuario=_Idusuario AND Admin=1;
+
+
+END $$
+DELIMITER ;
 
 
 
@@ -197,7 +221,7 @@ DELIMITER $$
 CREATE PROCEDURE SP_SELECT_Periodo(IN _IdPeriodo VARCHAR(8))
 BEGIN
 
-	SELECT * FROM Periodo WHERE IdPeriodo LIKE _IdPeriodo;	
+	SELECT * FROM Periodo WHERE IdPeriodo LIKE CONCAT('%',_IdPeriodo,'%');	
 
 END $$
 DELIMITER ;

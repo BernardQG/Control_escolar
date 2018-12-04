@@ -11,3 +11,16 @@ E:\SI\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.pdb
 E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.dll
 E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\MySql.Data.dll
 E:\SI\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.xml
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\LControl_Escolar.dll
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\LControl_Escolar.pdb
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.dll
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\LConexion.dll
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\MySql.Data.dll
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\LConexion.pdb
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\Google.Protobuf.xml
+E:\Control_escolar\Control_Escolar\LControl_Escolar\bin\Debug\MySql.Data.xml
+E:\Control_escolar\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csprojAssemblyReference.cache
+E:\Control_escolar\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csproj.CoreCompileInputs.cache
+E:\Control_escolar\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.csproj.CopyComplete
+E:\Control_escolar\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.dll
+E:\Control_escolar\Control_Escolar\LControl_Escolar\obj\Debug\LControl_Escolar.pdb

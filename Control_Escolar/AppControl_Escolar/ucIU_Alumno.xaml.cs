@@ -380,7 +380,7 @@ namespace AppControl_Escolar
                 }
                     catch (Exception)
                 {
-                    MessageBox.Show("Error al actualizar", "Error");
+                    MessageBox.Show("Error al insertar", "Error");
                 }
 
             }

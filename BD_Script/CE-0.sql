@@ -105,6 +105,7 @@ CREATE TABLE Puesto(
 	Nombre VARCHAR(35) NOT NULL,
 	Descripcion VARCHAR(80),
 	Sueldo_quincenal DOUBLE,
+	Estatus BIT,
 	Primary key(IdPuesto)	
 )AUTO_INCREMENT=1000;
 
@@ -131,8 +132,7 @@ CREATE TABLE Usuario(
 	IdEmpleado INT NOT NULL,
 	Usuario VARCHAR(30) NOT NULL,
 	Password VARCHAR(30) NOT NULL,
-	Correo VARCHAR(40) NOT NULL,
-	Admin BIT NOT NULL,
+	Admin INT NOT NULL,
 	Estatus BIT NOT NULL,
 	Primary key(IdUsuario),
 	Foreign key(IdEmpleado) references Empleado(IdEmpleado) 
@@ -178,7 +178,7 @@ CREATE TABLE Grupo(
 CREATE TABLE Historial_alumno(
 	IdAlumno INT NOT NULL,
 	Calificacion DOUBLE NOT NULL,
-	Oportunidad TINYINT,
+	Oportunidad INT,
 	IdGrupo INT NOT NULL,
 	Foreign key(IdAlumno) references Alumno(IdAlumno) ,
 	Foreign key(IdGrupo) references Grupo(IdGrupo) 

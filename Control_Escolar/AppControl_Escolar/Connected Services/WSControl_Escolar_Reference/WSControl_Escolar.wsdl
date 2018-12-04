@@ -65,59 +65,13 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SELECT_Alumno">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="inscripcion" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pagado" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SELECT_AlumnoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AlumnoResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SELECT_Carrera">
+      <s:element name="SELECT_Admin">
         <s:complexType />
       </s:element>
-      <s:element name="SELECT_CarreraResponse">
+      <s:element name="SELECT_AdminResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SELECT_CarreraResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SELECT_IAlumno">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SELECT_IAlumnoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SELECT_IAlumnoResult">
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AdminResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -229,6 +183,90 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SELECT_Alumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inscripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_AlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Carrera">
+        <s:complexType />
+      </s:element>
+      <s:element name="SELECT_CarreraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_CarreraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_IAlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_Periodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_PeriodoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_PeriodoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DELETE_Alumno">
         <s:complexType>
           <s:sequence>
@@ -283,6 +321,18 @@
       <s:element name="UPDATE_AlumnoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="UPDATE_Periodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdPeriodo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_inicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_fin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_PeriodoResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="INSERT_Alumno">
         <s:complexType>
           <s:sequence>
@@ -303,6 +353,17 @@
         </s:complexType>
       </s:element>
       <s:element name="INSERT_AlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="INSERT_Periodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_inicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_fin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_PeriodoResponse">
         <s:complexType />
       </s:element>
     </s:schema>
@@ -331,23 +392,11 @@
   <wsdl:message name="UsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:UsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="SELECT_AlumnoSoapIn">
-    <wsdl:part name="parameters" element="tns:SELECT_Alumno" />
+  <wsdl:message name="SELECT_AdminSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Admin" />
   </wsdl:message>
-  <wsdl:message name="SELECT_AlumnoSoapOut">
-    <wsdl:part name="parameters" element="tns:SELECT_AlumnoResponse" />
-  </wsdl:message>
-  <wsdl:message name="SELECT_CarreraSoapIn">
-    <wsdl:part name="parameters" element="tns:SELECT_Carrera" />
-  </wsdl:message>
-  <wsdl:message name="SELECT_CarreraSoapOut">
-    <wsdl:part name="parameters" element="tns:SELECT_CarreraResponse" />
-  </wsdl:message>
-  <wsdl:message name="SELECT_IAlumnoSoapIn">
-    <wsdl:part name="parameters" element="tns:SELECT_IAlumno" />
-  </wsdl:message>
-  <wsdl:message name="SELECT_IAlumnoSoapOut">
-    <wsdl:part name="parameters" element="tns:SELECT_IAlumnoResponse" />
+  <wsdl:message name="SELECT_AdminSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_AdminResponse" />
   </wsdl:message>
   <wsdl:message name="SELECT_PaisSoapIn">
     <wsdl:part name="parameters" element="tns:SELECT_Pais" />
@@ -379,6 +428,30 @@
   <wsdl:message name="SELECT_CPSoapOut">
     <wsdl:part name="parameters" element="tns:SELECT_CPResponse" />
   </wsdl:message>
+  <wsdl:message name="SELECT_AlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Alumno" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CarreraSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Carrera" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_CarreraSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_CarreraResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_IAlumno" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_IAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_PeriodoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Periodo" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_PeriodoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_PeriodoResponse" />
+  </wsdl:message>
   <wsdl:message name="DELETE_AlumnoSoapIn">
     <wsdl:part name="parameters" element="tns:DELETE_Alumno" />
   </wsdl:message>
@@ -403,11 +476,23 @@
   <wsdl:message name="UPDATE_AlumnoSoapOut">
     <wsdl:part name="parameters" element="tns:UPDATE_AlumnoResponse" />
   </wsdl:message>
+  <wsdl:message name="UPDATE_PeriodoSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Periodo" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_PeriodoSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_PeriodoResponse" />
+  </wsdl:message>
   <wsdl:message name="INSERT_AlumnoSoapIn">
     <wsdl:part name="parameters" element="tns:INSERT_Alumno" />
   </wsdl:message>
   <wsdl:message name="INSERT_AlumnoSoapOut">
     <wsdl:part name="parameters" element="tns:INSERT_AlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_PeriodoSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_Periodo" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_PeriodoSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_PeriodoResponse" />
   </wsdl:message>
   <wsdl:portType name="WSControl_EscolarSoap">
     <wsdl:operation name="conexionMysql">
@@ -426,17 +511,9 @@
       <wsdl:input message="tns:UsuarioSoapIn" />
       <wsdl:output message="tns:UsuarioSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SELECT_Alumno">
-      <wsdl:input message="tns:SELECT_AlumnoSoapIn" />
-      <wsdl:output message="tns:SELECT_AlumnoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_Carrera">
-      <wsdl:input message="tns:SELECT_CarreraSoapIn" />
-      <wsdl:output message="tns:SELECT_CarreraSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_IAlumno">
-      <wsdl:input message="tns:SELECT_IAlumnoSoapIn" />
-      <wsdl:output message="tns:SELECT_IAlumnoSoapOut" />
+    <wsdl:operation name="SELECT_Admin">
+      <wsdl:input message="tns:SELECT_AdminSoapIn" />
+      <wsdl:output message="tns:SELECT_AdminSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SELECT_Pais">
       <wsdl:input message="tns:SELECT_PaisSoapIn" />
@@ -458,6 +535,22 @@
       <wsdl:input message="tns:SELECT_CPSoapIn" />
       <wsdl:output message="tns:SELECT_CPSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <wsdl:input message="tns:SELECT_AlumnoSoapIn" />
+      <wsdl:output message="tns:SELECT_AlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <wsdl:input message="tns:SELECT_CarreraSoapIn" />
+      <wsdl:output message="tns:SELECT_CarreraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <wsdl:input message="tns:SELECT_IAlumnoSoapIn" />
+      <wsdl:output message="tns:SELECT_IAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Periodo">
+      <wsdl:input message="tns:SELECT_PeriodoSoapIn" />
+      <wsdl:output message="tns:SELECT_PeriodoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="DELETE_Alumno">
       <wsdl:input message="tns:DELETE_AlumnoSoapIn" />
       <wsdl:output message="tns:DELETE_AlumnoSoapOut" />
@@ -474,9 +567,17 @@
       <wsdl:input message="tns:UPDATE_AlumnoSoapIn" />
       <wsdl:output message="tns:UPDATE_AlumnoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="UPDATE_Periodo">
+      <wsdl:input message="tns:UPDATE_PeriodoSoapIn" />
+      <wsdl:output message="tns:UPDATE_PeriodoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="INSERT_Alumno">
       <wsdl:input message="tns:INSERT_AlumnoSoapIn" />
       <wsdl:output message="tns:INSERT_AlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Periodo">
+      <wsdl:input message="tns:INSERT_PeriodoSoapIn" />
+      <wsdl:output message="tns:INSERT_PeriodoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSControl_EscolarSoap" type="tns:WSControl_EscolarSoap">
@@ -517,26 +618,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SELECT_Alumno">
-      <soap:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_Carrera">
-      <soap:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_IAlumno">
-      <soap:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+    <wsdl:operation name="SELECT_Admin">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Admin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -589,6 +672,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <soap:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Periodo">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Periodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DELETE_Alumno">
       <soap:operation soapAction="http://tempuri.org/DELETE_Alumno" style="document" />
       <wsdl:input>
@@ -625,8 +744,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UPDATE_Periodo">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Periodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="INSERT_Alumno">
       <soap:operation soapAction="http://tempuri.org/INSERT_Alumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Periodo">
+      <soap:operation soapAction="http://tempuri.org/INSERT_Periodo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -673,26 +810,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SELECT_Alumno">
-      <soap12:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_Carrera">
-      <soap12:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SELECT_IAlumno">
-      <soap12:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+    <wsdl:operation name="SELECT_Admin">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Admin" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -745,6 +864,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SELECT_Alumno">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Carrera">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Carrera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IAlumno">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_IAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_Periodo">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Periodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DELETE_Alumno">
       <soap12:operation soapAction="http://tempuri.org/DELETE_Alumno" style="document" />
       <wsdl:input>
@@ -781,8 +936,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UPDATE_Periodo">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Periodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="INSERT_Alumno">
       <soap12:operation soapAction="http://tempuri.org/INSERT_Alumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Periodo">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_Periodo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

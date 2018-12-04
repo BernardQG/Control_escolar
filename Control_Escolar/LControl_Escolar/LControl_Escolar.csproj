@@ -54,12 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAuditoria.cs" />
     <Compile Include="clsControl_Escolar.cs" />
     <Compile Include="clsDelete.cs" />
+    <Compile Include="clsGrupo.cs" />
     <Compile Include="clsHConexion.cs" />
+    <Compile Include="clsHistorial_alumno.cs" />
     <Compile Include="clsInsert.cs" />
+    <Compile Include="clsMateria.cs" />
+    <Compile Include="clsProfesor.cs" />
     <Compile Include="clsSelect.cs" />
     <Compile Include="clsUpdate.cs" />
+    <Compile Include="clsUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,8 @@ namespace LControl_Escolar
             contrato.Cerrar();
         }
 
+        #region "Alumnos"
+
         public void UPDATE_Inscripcion(int IdAlumno, int Estatus)
         {
             StoreProcedure = "CALL SP_UPDATE_Inscripcion(" +IdAlumno.ToString()+","+Estatus.ToString()+");";
@@ -70,5 +72,62 @@ namespace LControl_Escolar
             comando.ExecuteReader();
             contrato.Cerrar();
         }
+        #endregion
+
+        #region "Periodos"
+
+        public void UPDATE_Periodo(int IdPeriodo,                                  
+                                  string Fecha_inicio,
+                                  string Fecha_fin)
+        {
+            StoreProcedure = "CALL SP_UPDATE_Periodo(" + IdPeriodo.ToString() +
+                                                    ",'" + Fecha_inicio.ToString() +
+                                                    "','" + Fecha_fin.ToString() + "');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+
+            contrato.Abrir();
+            comando.ExecuteReader();
+            contrato.Cerrar();
+        }
+        #endregion
+
+        #region "Empleado"
+
+        public void UPDATE_Empleado(int IdEmpleado,
+                                   string Nombre,
+                                   string APaterno,
+                                   string AMaterno,
+                                   string Fecha_nacimiento,
+                                   string Sexo,
+                                   string Calle,
+                                   string Numero,
+                                   int? Telefono,
+                                   int? Celular,
+                                   string Correo,
+                                   int? IdAcentamiento,
+                                   int? IdPuesto,
+                                   string Grado_estudios)
+        {
+            StoreProcedure = "CALL SP_UPDATE_Empleado(" + IdEmpleado.ToString() +
+                                                    ",'" + Nombre +
+                                                    "','" + APaterno +
+                                                    "','" + AMaterno +
+                                                    "','" + Fecha_nacimiento +
+                                                    "','" + Sexo +
+                                                    "','" + Calle +
+                                                    "','" + Numero +
+                                                    "'," + ((Telefono == null) ? "null" : Telefono.ToString()) +
+                                                    "," + ((Celular == null) ? "null" : Celular.ToString()) +
+                                                    ",'" + Correo +
+                                                    "'," + IdAcentamiento.ToString() +
+                                                    "," + IdPuesto.ToString() +
+                                                    ",'" + Grado_estudios + "');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+
+            contrato.Abrir();
+            comando.ExecuteReader();
+            contrato.Cerrar();
+        }
+        #endregion
     }
 }

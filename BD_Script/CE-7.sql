@@ -34,9 +34,10 @@ INSERT INTO Alumno(IdHumano,IdCarrera,Fecha_inscripcion) VALUES
 
 
 
-INSERT INTO Puesto(Nombre,Descripcion,Sueldo_quincenal) VALUES
-('Administrador','Modificacion del BD',3000.00),
-('Secretario','Ver estadisticas',2000.00);
+INSERT INTO Puesto(Nombre,Descripcion,Sueldo_quincenal,Estatus) VALUES
+('Profesor','Profesor',3000.00,1),
+('Administrador','Modificacion del BD',3000.00,1),
+('Secretario','Ver estadisticas',2000.00,1);
 
 
 INSERT INTO Empleado(IdHumano,IdPuesto) VALUES
@@ -44,9 +45,10 @@ INSERT INTO Empleado(IdHumano,IdPuesto) VALUES
 (20008,1001);
 
 
-INSERT INTO Usuario(IdEmpleado,Usuario,Password,correo,Admin,Estatus) VALUES
-(50000,'Admin1',AES_ENCRYPT('123','BQG'),'b.quintinoguzman@ugto.mx',1,1),
-(50001,'User',AES_ENCRYPT('123','BQG'),'desco1@hotmial.es',0,1);
+INSERT INTO Usuario(IdEmpleado,Usuario,Password,Admin,Estatus) VALUES
+(50000,'Admin1',AES_ENCRYPT('123','BQG'),2,1),
+(50001,'User',AES_ENCRYPT('123','BQG'),1,1),
+(50001,'User',AES_ENCRYPT('123','BQG'),0,1);
 
 
 INSERT INTO Periodo(Fecha_inicio,Fecha_Fin) VALUES

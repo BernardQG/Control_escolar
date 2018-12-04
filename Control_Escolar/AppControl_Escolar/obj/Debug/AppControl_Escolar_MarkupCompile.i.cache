@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\SI\Control_Escolar\AppControl_Escolar\obj\Debug\
+E:\Control_escolar\Control_Escolar\AppControl_Escolar\obj\Debug\
 AppControl_Escolar
 none
 false
 DEBUG;TRACE
-E:\SI\Control_Escolar\AppControl_Escolar\App.xaml
-61266616446
+E:\Control_escolar\Control_Escolar\AppControl_Escolar\App.xaml
+20-1588633734
 
-151298841783
-17-309946678
-ucAlumnos.xaml;ucIU_Alumno.xaml;ucLog.xaml;ucPeriodos.xaml;ucPrincipal.xaml;WPrincipal.xaml;
+3624799251
+17-2055885653
+ucAcercaDe.xaml;ucAlumnos.xaml;ucAuditoria.xaml;ucEmpleados.xaml;ucGrupos.xaml;ucHistorial_alumno.xaml;ucIU_Alumno.xaml;ucIU_Empleado.xaml;ucIU_Grupo.xaml;ucIU_Historial_alumno.xaml;ucIU_Materia.xaml;ucIU_Profesor.xaml;ucIU_Usuario.xaml;ucLog.xaml;ucMaterias.xaml;ucPeriodos.xaml;ucPrincipal.xaml;ucProfesores.xaml;ucUsuarios.xaml;WPrincipal.xaml;
 
-False
+True
 

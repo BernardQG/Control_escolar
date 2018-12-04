@@ -80,8 +80,27 @@ namespace LControl_Escolar
             else return null;
 
         }
+        public DataSet SELECT_Admin()
+        {
+            DataSet _dataSet = new DataSet();
+            StoreProcedure = "CALL SP_SELECT_Admin();";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            if (contrato.Abrir())
+            {
+                _mySqlDataAdapter.Fill(_dataSet);
+                contrato.Cerrar();
+                if (_dataSet.Tables[0].Rows.Count > 0)
+                    return _dataSet;
+                else
+                    return null;
+            }
+            else return null;
 
-     
+        }
+
+
 
     }
 }

@@ -44,26 +44,12 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usuario", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> UsuarioAsync(string Usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Alumno", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Admin", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera);
+        System.Data.DataSet SELECT_Admin();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Alumno", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AlumnoAsync(string id, string nombre, string inscripcion, string pagado, string carrera);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Carrera", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet SELECT_Carrera();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Carrera", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CarreraAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_IAlumno", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet SELECT_IAlumno(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_IAlumno", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_IAlumnoAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Admin", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AdminAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Pais", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -100,6 +86,34 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_CP", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CPAsync(string cp);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Alumno", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Alumno", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AlumnoAsync(string id, string nombre, string inscripcion, string pagado, string carrera);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Carrera", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet SELECT_Carrera();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Carrera", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CarreraAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_IAlumno", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet SELECT_IAlumno(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_IAlumno", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_IAlumnoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Periodo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet SELECT_Periodo(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SELECT_Periodo", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SELECT_PeriodoAsync(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DELETE_Alumno", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void DELETE_Alumno(int id);
@@ -129,6 +143,13 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UPDATE_Alumno", ReplyAction="*")]
         System.Threading.Tasks.Task<AppControl_Escolar.WSControl_Escolar_Reference.UPDATE_AlumnoResponse> UPDATE_AlumnoAsync(AppControl_Escolar.WSControl_Escolar_Reference.UPDATE_AlumnoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UPDATE_Periodo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void UPDATE_Periodo(int IdPeriodo, string Fecha_inicio, string Fecha_fin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UPDATE_Periodo", ReplyAction="*")]
+        System.Threading.Tasks.Task UPDATE_PeriodoAsync(int IdPeriodo, string Fecha_inicio, string Fecha_fin);
+        
         // CODEGEN: Parameter 'Telefono' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INSERT_Alumno", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -136,6 +157,13 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INSERT_Alumno", ReplyAction="*")]
         System.Threading.Tasks.Task<AppControl_Escolar.WSControl_Escolar_Reference.INSERT_AlumnoResponse> INSERT_AlumnoAsync(AppControl_Escolar.WSControl_Escolar_Reference.INSERT_AlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INSERT_Periodo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void INSERT_Periodo(string Fecha_inicio, string Fecha_fin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INSERT_Periodo", ReplyAction="*")]
+        System.Threading.Tasks.Task INSERT_PeriodoAsync(string Fecha_inicio, string Fecha_fin);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -355,28 +383,12 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
             return base.Channel.UsuarioAsync(Usuario);
         }
         
-        public System.Data.DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera) {
-            return base.Channel.SELECT_Alumno(id, nombre, inscripcion, pagado, carrera);
+        public System.Data.DataSet SELECT_Admin() {
+            return base.Channel.SELECT_Admin();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AlumnoAsync(string id, string nombre, string inscripcion, string pagado, string carrera) {
-            return base.Channel.SELECT_AlumnoAsync(id, nombre, inscripcion, pagado, carrera);
-        }
-        
-        public System.Data.DataSet SELECT_Carrera() {
-            return base.Channel.SELECT_Carrera();
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CarreraAsync() {
-            return base.Channel.SELECT_CarreraAsync();
-        }
-        
-        public System.Data.DataSet SELECT_IAlumno(int id) {
-            return base.Channel.SELECT_IAlumno(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_IAlumnoAsync(int id) {
-            return base.Channel.SELECT_IAlumnoAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AdminAsync() {
+            return base.Channel.SELECT_AdminAsync();
         }
         
         public System.Data.DataSet SELECT_Pais() {
@@ -417,6 +429,38 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CPAsync(string cp) {
             return base.Channel.SELECT_CPAsync(cp);
+        }
+        
+        public System.Data.DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera) {
+            return base.Channel.SELECT_Alumno(id, nombre, inscripcion, pagado, carrera);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_AlumnoAsync(string id, string nombre, string inscripcion, string pagado, string carrera) {
+            return base.Channel.SELECT_AlumnoAsync(id, nombre, inscripcion, pagado, carrera);
+        }
+        
+        public System.Data.DataSet SELECT_Carrera() {
+            return base.Channel.SELECT_Carrera();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_CarreraAsync() {
+            return base.Channel.SELECT_CarreraAsync();
+        }
+        
+        public System.Data.DataSet SELECT_IAlumno(int id) {
+            return base.Channel.SELECT_IAlumno(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_IAlumnoAsync(int id) {
+            return base.Channel.SELECT_IAlumnoAsync(id);
+        }
+        
+        public System.Data.DataSet SELECT_Periodo(string id) {
+            return base.Channel.SELECT_Periodo(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SELECT_PeriodoAsync(string id) {
+            return base.Channel.SELECT_PeriodoAsync(id);
         }
         
         public void DELETE_Alumno(int id) {
@@ -491,6 +535,14 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
             return ((AppControl_Escolar.WSControl_Escolar_Reference.WSControl_EscolarSoap)(this)).UPDATE_AlumnoAsync(inValue);
         }
         
+        public void UPDATE_Periodo(int IdPeriodo, string Fecha_inicio, string Fecha_fin) {
+            base.Channel.UPDATE_Periodo(IdPeriodo, Fecha_inicio, Fecha_fin);
+        }
+        
+        public System.Threading.Tasks.Task UPDATE_PeriodoAsync(int IdPeriodo, string Fecha_inicio, string Fecha_fin) {
+            return base.Channel.UPDATE_PeriodoAsync(IdPeriodo, Fecha_inicio, Fecha_fin);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AppControl_Escolar.WSControl_Escolar_Reference.INSERT_AlumnoResponse AppControl_Escolar.WSControl_Escolar_Reference.WSControl_EscolarSoap.INSERT_Alumno(AppControl_Escolar.WSControl_Escolar_Reference.INSERT_AlumnoRequest request) {
             return base.Channel.INSERT_Alumno(request);
@@ -535,6 +587,14 @@ namespace AppControl_Escolar.WSControl_Escolar_Reference {
             inValue.IdCarrera = IdCarrera;
             inValue.Fecha_inscripcion = Fecha_inscripcion;
             return ((AppControl_Escolar.WSControl_Escolar_Reference.WSControl_EscolarSoap)(this)).INSERT_AlumnoAsync(inValue);
+        }
+        
+        public void INSERT_Periodo(string Fecha_inicio, string Fecha_fin) {
+            base.Channel.INSERT_Periodo(Fecha_inicio, Fecha_fin);
+        }
+        
+        public System.Threading.Tasks.Task INSERT_PeriodoAsync(string Fecha_inicio, string Fecha_fin) {
+            return base.Channel.INSERT_PeriodoAsync(Fecha_inicio, Fecha_fin);
         }
     }
 }

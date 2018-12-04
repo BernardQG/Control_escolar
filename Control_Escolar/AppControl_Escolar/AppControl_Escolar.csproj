@@ -67,20 +67,97 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WS_Auditoria_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Empleado_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Grupo_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Historial_alumno_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Materia_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Profesor_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Usuario_Reference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ucAcercaDe.xaml.cs">
+      <DependentUpon>ucAcercaDe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ucAlumnos.xaml.cs">
       <DependentUpon>ucAlumnos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucAuditoria.xaml.cs">
+      <DependentUpon>ucAuditoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucEmpleados.xaml.cs">
+      <DependentUpon>ucEmpleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucGrupos.xaml.cs">
+      <DependentUpon>ucGrupos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucHistorial_alumno.xaml.cs">
+      <DependentUpon>ucHistorial_alumno.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucIU_Alumno.xaml.cs">
       <DependentUpon>ucIU_Alumno.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ucIU_Empleado.xaml.cs">
+      <DependentUpon>ucIU_Empleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucIU_Grupo.xaml.cs">
+      <DependentUpon>ucIU_Grupo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucIU_Historial_alumno.xaml.cs">
+      <DependentUpon>ucIU_Historial_alumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucIU_Materia.xaml.cs">
+      <DependentUpon>ucIU_Materia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucIU_Profesor.xaml.cs">
+      <DependentUpon>ucIU_Profesor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucIU_Usuario.xaml.cs">
+      <DependentUpon>ucIU_Usuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ucLog.xaml.cs">
       <DependentUpon>ucLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMaterias.xaml.cs">
+      <DependentUpon>ucMaterias.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucPeriodos.xaml.cs">
       <DependentUpon>ucPeriodos.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucPrincipal.xaml.cs">
       <DependentUpon>ucPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucProfesores.xaml.cs">
+      <DependentUpon>ucProfesores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucUsuarios.xaml.cs">
+      <DependentUpon>ucUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPrincipal.xaml.cs">
       <DependentUpon>WPrincipal.xaml</DependentUpon>
@@ -89,7 +166,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ucAcercaDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ucAlumnos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucAuditoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucEmpleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucGrupos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucHistorial_alumno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,7 +194,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ucIU_Empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucIU_Grupo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucIU_Historial_alumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucIU_Materia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucIU_Profesor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucIU_Usuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ucLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMaterias.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +231,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ucPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucProfesores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +272,37 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WSControl_Escolar_Reference\WSControl_Escolar.wsdl" />
+    <None Include="Connected Services\WS_Auditoria_Reference\WS_Auditoria.wsdl" />
+    <None Include="Connected Services\WS_Empleado_Reference\AppControl_Escolar.WS_Empleado_Reference.INSERT_EmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Empleado_Reference\AppControl_Escolar.WS_Empleado_Reference.UPDATE_EmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Empleado_Reference\WS_Empleado.wsdl" />
+    <None Include="Connected Services\WS_Grupo_Reference\WS_Grupo.wsdl" />
+    <None Include="Connected Services\WS_Historial_alumno_Reference\WS_Historial_alumno.wsdl" />
+    <None Include="Connected Services\WS_Materia_Reference\AppControl_Escolar.WS_Materia_Reference.INSERT_MateriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Materia_Reference\AppControl_Escolar.WS_Materia_Reference.UPDATE_MateriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Materia_Reference\WS_Materia.wsdl" />
+    <None Include="Connected Services\WS_Profesor_Reference\AppControl_Escolar.WS_Profesor_Reference.INSERT_ProfesorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Profesor_Reference\AppControl_Escolar.WS_Profesor_Reference.UPDATE_ProfesorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Profesor_Reference\WS_Profesor.wsdl" />
+    <None Include="Connected Services\WS_Usuario_Reference\AppControl_Escolar.WS_Usuario_Reference.INSERT_UsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Usuario_Reference\AppControl_Escolar.WS_Usuario_Reference.UPDATE_UsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WS_Usuario_Reference\WS_Usuario.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
@@ -154,6 +318,13 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WSControl_Escolar_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Auditoria_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Empleado_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Grupo_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Historial_alumno_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Materia_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Profesor_Reference\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Usuario_Reference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\WSControl_Escolar_Reference\WSControl_Escolar.disco" />
@@ -169,6 +340,120 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Empleado_Reference\WS_Empleado.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Empleado_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Empleado_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Empleado_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Profesor_Reference\WS_Profesor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Profesor_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Profesor_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Profesor_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Usuario_Reference\WS_Usuario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Usuario_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Usuario_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Usuario_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Materia_Reference\WS_Materia.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Materia_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Materia_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Materia_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Grupo_Reference\WS_Grupo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Grupo_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Grupo_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Grupo_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Historial_alumno_Reference\WS_Historial_alumno.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Historial_alumno_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Historial_alumno_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Historial_alumno_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Auditoria_Reference\WS_Auditoria.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Auditoria_Reference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Auditoria_Reference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WS_Auditoria_Reference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="estudios-multidisciplinarios-png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

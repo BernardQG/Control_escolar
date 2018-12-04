@@ -113,7 +113,7 @@ DELIMITER ;
 
 DROP PROCEDURE IF EXISTS SP_UPDATE_Periodo;
 DELIMITER $$
-CREATE PROCEDURE SP_UPDATE_Periodo(IN _IdPeriodo INT, IN _Fecha_inicio DATE, IN Fecha_fin DATE)
+CREATE PROCEDURE SP_UPDATE_Periodo(IN _IdPeriodo INT, IN _Fecha_inicio DATE, IN _Fecha_fin DATE)
 BEGIN
 	
 	UPDATE Periodo
@@ -121,7 +121,7 @@ BEGIN
 		Fecha_Fin = _Fecha_fin,
 		Fecha_inicio = _Fecha_inicio
 
-	WHERE IdPeriodo=_IdPerido;
+	WHERE IdPeriodo=_IdPeriodo;
 
 END $$
 DELIMITER ;

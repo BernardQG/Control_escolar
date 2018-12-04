@@ -70,11 +70,46 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="WSControl_Escolar.asmx" />
+    <Content Include="WS_Auditoria.asmx" />
+    <Content Include="WS_Empleado.asmx" />
+    <Content Include="WS_Grupo.asmx" />
+    <Content Include="WS_Historial_alumno.asmx" />
+    <Content Include="WS_Materia.asmx" />
+    <Content Include="WS_Profesor.asmx" />
+    <Content Include="WS_Usuario.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WSControl_Escolar.asmx.cs">
       <DependentUpon>WSControl_Escolar.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Auditoria.asmx.cs">
+      <DependentUpon>WS_Auditoria.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Empleado.asmx.cs">
+      <DependentUpon>WS_Empleado.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Grupo.asmx.cs">
+      <DependentUpon>WS_Grupo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Historial_alumno.asmx.cs">
+      <DependentUpon>WS_Historial_alumno.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Materia.asmx.cs">
+      <DependentUpon>WS_Materia.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Profesor.asmx.cs">
+      <DependentUpon>WS_Profesor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_Usuario.asmx.cs">
+      <DependentUpon>WS_Usuario.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

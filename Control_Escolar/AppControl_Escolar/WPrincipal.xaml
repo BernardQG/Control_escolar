@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:AppControl_Escolar"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="WPrincipal" Height="550" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="#00000000">
+        Title="WPrincipal" Height="550" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="#00000000" Icon="ico.png">
     <Grid>
-        <Rectangle RadiusY="7" RadiusX="7" Fill="White"/>
-        <Rectangle RadiusY="7" RadiusX="7" x:Name="rPrincipal" Margin="1">
+        <Rectangle RadiusY="4" RadiusX="4" Fill="White"/>
+        <Rectangle RadiusY="4" RadiusX="4" x:Name="rPrincipal" Margin="1">
             <Rectangle.Fill>
-                <ImageBrush Stretch="UniformToFill" ImageSource="E:\SI\Control_Escolar\AppControl_Escolar\bin\Debug\Recursos\Fon1.jpg"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Fon1.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
         <Grid>

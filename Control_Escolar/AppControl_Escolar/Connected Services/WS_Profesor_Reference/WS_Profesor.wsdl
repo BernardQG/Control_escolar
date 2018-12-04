@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SELECT_Profesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_ProfesorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_ProfesorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IProfesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_IProfesorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_IProfesorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_Profesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_ProfesorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UPDATE_Profesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdProfesor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Celular" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdAcentamiento" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Grado_estudios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Especialidad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Folio_titulo" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_ProfesorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="INSERT_Profesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Telefono" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Celular" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdAcentamiento" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Grado_estudios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Especialidad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Folio_titulo" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_ProfesorResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SELECT_ProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Profesor" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_ProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_ProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_IProfesor" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_IProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_IProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_ProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:DELETE_Profesor" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_ProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:DELETE_ProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_ProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Profesor" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_ProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_ProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_ProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_Profesor" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_ProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_ProfesorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_ProfesorSoap">
+    <wsdl:operation name="SELECT_Profesor">
+      <wsdl:input message="tns:SELECT_ProfesorSoapIn" />
+      <wsdl:output message="tns:SELECT_ProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IProfesor">
+      <wsdl:input message="tns:SELECT_IProfesorSoapIn" />
+      <wsdl:output message="tns:SELECT_IProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Profesor">
+      <wsdl:input message="tns:DELETE_ProfesorSoapIn" />
+      <wsdl:output message="tns:DELETE_ProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Profesor">
+      <wsdl:input message="tns:UPDATE_ProfesorSoapIn" />
+      <wsdl:output message="tns:UPDATE_ProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Profesor">
+      <wsdl:input message="tns:INSERT_ProfesorSoapIn" />
+      <wsdl:output message="tns:INSERT_ProfesorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_ProfesorSoap" type="tns:WS_ProfesorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Profesor">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Profesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IProfesor">
+      <soap:operation soapAction="http://tempuri.org/SELECT_IProfesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Profesor">
+      <soap:operation soapAction="http://tempuri.org/DELETE_Profesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Profesor">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Profesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Profesor">
+      <soap:operation soapAction="http://tempuri.org/INSERT_Profesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_ProfesorSoap12" type="tns:WS_ProfesorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Profesor">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Profesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SELECT_IProfesor">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_IProfesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Profesor">
+      <soap12:operation soapAction="http://tempuri.org/DELETE_Profesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Profesor">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Profesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Profesor">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_Profesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Profesor">
+    <wsdl:port name="WS_ProfesorSoap" binding="tns:WS_ProfesorSoap">
+      <soap:address location="http://localhost:49655/WS_Profesor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_ProfesorSoap12" binding="tns:WS_ProfesorSoap12">
+      <soap12:address location="http://localhost:49655/WS_Profesor.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

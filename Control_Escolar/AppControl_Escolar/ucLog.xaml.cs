@@ -60,9 +60,10 @@ namespace AppControl_Escolar
                     dataSet1 = wssc.UsuarioLog(txtbUsuario.Text, txtbPassword.Password);
                     if (dataSet1 != null)
                     {
-                        Open();
+                        
                         wssc.UPDATE_Sesion(Int32.Parse(dataSet1.Tables[0].Rows[0][0].ToString()));
                         wP.IdUsuario = Int32.Parse(dataSet1.Tables[0].Rows[0][0].ToString());
+                        Open();
                         MessageBox.Show("Hola!, Usuario: " + dataSet1.Tables[0].Rows[0][0].ToString(), "Bienvenido");
 
                     }
@@ -77,15 +78,7 @@ namespace AppControl_Escolar
             };
 
             wP.KeyDown += (s, e) => {
-
-                if (e.Key == Key.Enter)
-                {
-
-                    Open();
-                    //btnContinuar.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
-                }
-
-                
+                             
                 string _backdoor = Key.B.ToString()+ Key.Q.ToString()+Key.G.ToString();
                
                 

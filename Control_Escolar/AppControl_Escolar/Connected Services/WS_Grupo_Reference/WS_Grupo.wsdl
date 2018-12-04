@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SELECT_Grupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idperiodo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECT_GrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_GrupoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_Grupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DELETE_GrupoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UPDATE_Grupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdMateria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdProfesor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdPeriodo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_GrupoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="INSERT_Grupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdMateria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdProfesor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdPeriodo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_GrupoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SELECT_GrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Grupo" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_GrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_GrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_GrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:DELETE_Grupo" />
+  </wsdl:message>
+  <wsdl:message name="DELETE_GrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:DELETE_GrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_GrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_Grupo" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_GrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_GrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_GrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_Grupo" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_GrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_GrupoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_GrupoSoap">
+    <wsdl:operation name="SELECT_Grupo">
+      <wsdl:input message="tns:SELECT_GrupoSoapIn" />
+      <wsdl:output message="tns:SELECT_GrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Grupo">
+      <wsdl:input message="tns:DELETE_GrupoSoapIn" />
+      <wsdl:output message="tns:DELETE_GrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Grupo">
+      <wsdl:input message="tns:UPDATE_GrupoSoapIn" />
+      <wsdl:output message="tns:UPDATE_GrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Grupo">
+      <wsdl:input message="tns:INSERT_GrupoSoapIn" />
+      <wsdl:output message="tns:INSERT_GrupoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_GrupoSoap" type="tns:WS_GrupoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Grupo">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Grupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Grupo">
+      <soap:operation soapAction="http://tempuri.org/DELETE_Grupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Grupo">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_Grupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Grupo">
+      <soap:operation soapAction="http://tempuri.org/INSERT_Grupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_GrupoSoap12" type="tns:WS_GrupoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Grupo">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Grupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DELETE_Grupo">
+      <soap12:operation soapAction="http://tempuri.org/DELETE_Grupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_Grupo">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_Grupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_Grupo">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_Grupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Grupo">
+    <wsdl:port name="WS_GrupoSoap" binding="tns:WS_GrupoSoap">
+      <soap:address location="http://localhost:49655/WS_Grupo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_GrupoSoap12" binding="tns:WS_GrupoSoap12">
+      <soap12:address location="http://localhost:49655/WS_Grupo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

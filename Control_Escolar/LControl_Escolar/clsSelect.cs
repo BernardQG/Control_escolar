@@ -14,65 +14,7 @@ namespace LControl_Escolar
         clsHConexion contrato = new clsHConexion();
         string StoreProcedure;
         //int= es un tipo de dato Nullable
-        public DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera)
-        {
-            DataSet _dataSet = new DataSet();
-            //Operador ternario ?
-            StoreProcedure = "CALL SP_SELECT_Alumno('" + id +
-                                                 "','" + nombre +
-                                                 "','" + inscripcion +
-                                                 "','" + pagado +
-                                                 "','" + carrera + "');";
-            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
-
-            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
-            _mySqlDataAdapter.SelectCommand = comando;
-            contrato.Abrir();
-            _mySqlDataAdapter.Fill(_dataSet);
-            contrato.Cerrar();
-            if (_dataSet.Tables[0].Rows.Count != 0)
-                return _dataSet;
-            else
-                return null;
-
-        }
-
-        public DataSet SELECT_Carrera()
-        {
-            DataSet _dataSet = new DataSet();
-            //Operador ternario ?
-            StoreProcedure = "CALL SP_SELECT_Carrera();";
-            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
-
-            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
-            _mySqlDataAdapter.SelectCommand = comando;
-            contrato.Abrir();
-            _mySqlDataAdapter.Fill(_dataSet);
-            contrato.Cerrar();
-            if (_dataSet.Tables[0].Rows.Count != 0)
-                return _dataSet;
-            else
-                return null;
-
-        }
-
-        public DataSet SELECT_IAlumno(int Id)
-        {
-            DataSet _dataSet = new DataSet();
-            //Operador ternario ?
-            StoreProcedure = "CALL SP_SELECT_IAlumno("+Id.ToString()+");";
-            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
-            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
-            _mySqlDataAdapter.SelectCommand = comando;
-            contrato.Abrir();
-            _mySqlDataAdapter.Fill(_dataSet);
-            contrato.Cerrar();
-            if (_dataSet.Tables[0].Rows.Count != 0)
-                return _dataSet;
-            else
-                return null;
-
-        }
+        #region "Localidad"
         public DataSet SELECT_Pais()
         {
             DataSet _dataSet = new DataSet();
@@ -155,6 +97,150 @@ namespace LControl_Escolar
                 return null;
 
         }
+        #endregion
+        
+
+
+        #region "Alumnos"
+        public DataSet SELECT_Alumno(string id, string nombre, string inscripcion, string pagado, string carrera)
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+
+            StoreProcedure = "CALL SP_SELECT_Alumno('" + id +
+                                                 "','" + nombre +
+                                                 "','" + inscripcion +
+                                                 "','" + pagado +
+                                                 "','" + carrera + "');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+
+        public DataSet SELECT_Carrera()
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_Carrera();";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+
+        public DataSet SELECT_IAlumno(int Id)
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_IAlumno("+Id.ToString()+");";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+
+        #endregion
+
+        #region "Periodo"
+        public DataSet SELECT_Periodo(string Id)
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_Periodo('" + Id.ToString() + "');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+        #endregion
+
+        #region "Empleado"
+        public DataSet SELECT_Empleado(string id, string nombre, string puesto)
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_Empleado('" + id + "','"+nombre+"','"+puesto+"');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+
+
+        public DataSet SELECT_IEmpleado(int id)
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_IEmpleado('" + id + "');";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+        }
+
+        public DataSet SELECT_Puesto()
+        {
+            DataSet _dataSet = new DataSet();
+            //Operador ternario ?
+            StoreProcedure = "CALL SP_SELECT_Puesto();";
+            MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
+            MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
+            _mySqlDataAdapter.SelectCommand = comando;
+            contrato.Abrir();
+            _mySqlDataAdapter.Fill(_dataSet);
+            contrato.Cerrar();
+            if (_dataSet.Tables[0].Rows.Count != 0)
+                return _dataSet;
+            else
+                return null;
+
+        }
+        #endregion
+
 
     }
 }

@@ -75,6 +75,51 @@
                     </Grid>
                 </StackPanel>
             </Grid>
+            
+            <Grid Width="120" Height="100" Margin="15" x:Name="gMateria" >
+                <Rectangle RadiusY="7" RadiusX="7" Fill="Black" Margin="0 2 2 0"/>
+                <Rectangle RadiusY="7" RadiusX="7" Fill="#FF6C2448" Margin="2 0 0 2"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="FormatListBulletedType" Width="60" Height="60" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                    <Grid>
+                        <Rectangle Fill="Black"/>
+                        <TextBlock Text="   Materia   " HorizontalAlignment="Center" FontSize="18" Foreground="WhiteSmoke"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Width="120" Height="100" Margin="15" x:Name="gHistorial_alumno" >
+                <Rectangle RadiusY="7" RadiusX="7" Fill="Black" Margin="0 2 2 0"/>
+                <Rectangle RadiusY="7" RadiusX="7" Fill="#FF6C2448" Margin="2 0 0 2"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="History" Width="40" Height="40" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                    <Grid >
+                        <Rectangle Fill="Black"/>
+                        <TextBlock Text="Historial de Alumnos" HorizontalAlignment="Center" FontSize="18" Foreground="WhiteSmoke" TextWrapping="Wrap" Margin="2 0 2 0"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Width="120" Height="100" Margin="15" x:Name="gAuditoria" >
+                <Rectangle RadiusY="7" RadiusX="7" Fill="Black" Margin="0 2 2 0"/>
+                <Rectangle RadiusY="7" RadiusX="7" Fill="#FF6C2448" Margin="2 0 0 2"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="TestTube" Width="60" Height="60" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                    <Grid>
+                        <Rectangle Fill="Black"/>
+                        <TextBlock Text="   Auditoria   " HorizontalAlignment="Center" FontSize="18" Foreground="WhiteSmoke"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Width="120" Height="100" Margin="15" x:Name="gAcercaDE" >
+                <Rectangle RadiusY="7" RadiusX="7" Fill="Black" Margin="0 2 2 0"/>
+                <Rectangle RadiusY="7" RadiusX="7" Fill="#FF6C2448" Margin="2 0 0 2"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Information" Width="60" Height="60" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                    <Grid>
+                        <Rectangle Fill="Black"/>
+                        <TextBlock Text=" Acerca de..." HorizontalAlignment="Center" FontSize="18" Foreground="WhiteSmoke"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
 
         </WrapPanel>
     </Grid>

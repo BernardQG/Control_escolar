@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="AppControl_Escolar.ucIU_Empleado"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:AppControl_Escolar"
+             mc:Ignorable="d" 
+            d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#66000000">
+        <Grid  Width="640" Height="390">
+            <Rectangle Fill="#FF2C2C2C" RadiusY="6" RadiusX="6"/>
+            <WrapPanel  Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+
+                <StackPanel Orientation="Horizontal" Margin="5" x:Name="sId" >
+                    <TextBlock Text="Id:  " VerticalAlignment="Center" Foreground="Gray" FontSize="15"/>
+                    <TextBlock x:Name="tbId" Text="#"  VerticalAlignment="Center" Foreground="#FF3D96B8" FontSize="15"/>
+                </StackPanel>
+                <TextBox x:Name="tbNombre" materialDesign:HintAssist.Hint="Nombre" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbAPaterno" materialDesign:HintAssist.Hint="Apellido paterno" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbAMaterno" materialDesign:HintAssist.Hint="Apellido materno" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="5"/>
+                <TextBlock Text="Fecha de nacimiento" VerticalAlignment="Center" Foreground="Gray" Margin="5 5 5 0"/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <ComboBox x:Name="tbFn_d" materialDesign:HintAssist.Hint="Dia" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  Width="45"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="2 0"/>
+                    <ComboBox x:Name="tbFn_m" materialDesign:HintAssist.Hint="Mes" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  Width="45"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="2 0"/>
+                    <ComboBox x:Name="tbFn_a" materialDesign:HintAssist.Hint="Año" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  Width="55"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="2 0"/>
+                </StackPanel>
+
+                <ComboBox x:Name="cbSexo" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Sexo" Foreground="WhiteSmoke" Margin="5"/>
+                <TextBlock Text="Buscar por CP" VerticalAlignment="Center" Foreground="Gray" Margin="5 5 5 0"/>
+                <TextBox x:Name="tbCP" materialDesign:HintAssist.Hint="Codigo postal" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5 0 5 5"/>
+                <ComboBox x:Name="cbPais" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Pais" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+                <ComboBox x:Name="cbEstado" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Estado" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+                <ComboBox x:Name="cbMunicipio" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Municipio" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+                <ComboBox x:Name="cbAcentamiento" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Acentamiento" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Tipo: " VerticalAlignment="Center" Foreground="Gray"/>
+                    <TextBlock x:Name="tbTipo_acentamiento" Text="#"  VerticalAlignment="Center" Foreground="LightGray" />
+                </StackPanel>
+                <TextBox x:Name="tbCalle" materialDesign:HintAssist.Hint="Calle" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbNumero" materialDesign:HintAssist.Hint="Numero exterior" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbTelefono" materialDesign:HintAssist.Hint="Telefono" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"   VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbCelular" materialDesign:HintAssist.Hint="Celular" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"   VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5"/>
+                <TextBox x:Name="tbCorreo" materialDesign:HintAssist.Hint="Correo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"   VerticalAlignment="Center" Foreground="WhiteSmoke" Margin="5"/>
+                <ComboBox x:Name="cbPuesto" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Puesto" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+                <ComboBox x:Name="cbGrado_Estudios" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Grado de estudios" Foreground="WhiteSmoke" Margin="5" Width="160"/>
+               
+
+                <Button x:Name="btnIU" Content="Agregar" HorizontalAlignment="Center"  Width="100"  Background="#FF3D96B8" VerticalAlignment="Center" Margin="5" FontSize="12"/>
+
+                <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center"  Width="100"  Background="#FF3D96B8" VerticalAlignment="Center" Margin="5" FontSize="12"/>
+
+
+            </WrapPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -21,6 +21,14 @@ namespace AppControl_Escolar
     {
         private Boolean Normal = false;
         public WSControl_Escolar_Reference.WSControl_EscolarSoapClient wssc = new WSControl_Escolar_Reference.WSControl_EscolarSoapClient();
+        public WS_Empleado_Reference.WS_EmpleadoSoapClient wsE = new WS_Empleado_Reference.WS_EmpleadoSoapClient();
+        public WS_Profesor_Reference.WS_ProfesorSoapClient wsP = new WS_Profesor_Reference.WS_ProfesorSoapClient();
+        public WS_Usuario_Reference.WS_UsuarioSoapClient wsU = new WS_Usuario_Reference.WS_UsuarioSoapClient();
+        public WS_Materia_Reference.WS_MateriaSoapClient wsM = new WS_Materia_Reference.WS_MateriaSoapClient();
+        public WS_Grupo_Reference.WS_GrupoSoapClient wsG = new WS_Grupo_Reference.WS_GrupoSoapClient();
+        public WS_Historial_alumno_Reference.WS_Historial_alumnoSoapClient wsH = new WS_Historial_alumno_Reference.WS_Historial_alumnoSoapClient();
+        public WS_Auditoria_Reference.WS_AuditoriaSoapClient wsAu = new WS_Auditoria_Reference.WS_AuditoriaSoapClient();             
+
         public int IdUsuario;
         
         

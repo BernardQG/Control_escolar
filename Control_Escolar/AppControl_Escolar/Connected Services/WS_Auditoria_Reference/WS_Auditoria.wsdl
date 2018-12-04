@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SELECT_Auditoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="SELECT_AuditoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECT_AuditoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SELECT_AuditoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT_Auditoria" />
+  </wsdl:message>
+  <wsdl:message name="SELECT_AuditoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECT_AuditoriaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_AuditoriaSoap">
+    <wsdl:operation name="SELECT_Auditoria">
+      <wsdl:input message="tns:SELECT_AuditoriaSoapIn" />
+      <wsdl:output message="tns:SELECT_AuditoriaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_AuditoriaSoap" type="tns:WS_AuditoriaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Auditoria">
+      <soap:operation soapAction="http://tempuri.org/SELECT_Auditoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_AuditoriaSoap12" type="tns:WS_AuditoriaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT_Auditoria">
+      <soap12:operation soapAction="http://tempuri.org/SELECT_Auditoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Auditoria">
+    <wsdl:port name="WS_AuditoriaSoap" binding="tns:WS_AuditoriaSoap">
+      <soap:address location="http://localhost:49655/WS_Auditoria.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_AuditoriaSoap12" binding="tns:WS_AuditoriaSoap12">
+      <soap12:address location="http://localhost:49655/WS_Auditoria.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
