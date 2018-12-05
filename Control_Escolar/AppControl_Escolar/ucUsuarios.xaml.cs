@@ -83,7 +83,7 @@ namespace AppControl_Escolar
         }
         public void mensaje1()
         {
-            MessageBox.Show("Se requiere de un Id de una empleado para continuar, seleccione un registro", "Notificacion");
+            MessageBox.Show("Se requiere de un Id para continuar, seleccione un registro", "Notificacion");
         }
         public void cargarComboBox()
         {

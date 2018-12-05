@@ -209,29 +209,3 @@ CREATE TABLE Auditoria(
 	Foreign key(IdTabla) references Tabla(IdTabla) ,
 	Foreign key(IdUsuario) references Usuario(IdUsuario) 
 )AUTO_INCREMENT=90000;
-
-
-
-
-
-
-
-CREATE TABLE Tipo_beca(
-	IdTipo_beca INT NOT NULL AUTO_INCREMENT,
-	Nombre VARCHAR(25) NOT NULL, 
-	Monto_mensual DOUBLE NOT NULL,
-	Estatus BIT NOT NULL,
-	Primary key(IdTipo_beca)
-)AUTO_INCREMENT=1000;
-
-CREATE TABLE Beca(
-	IdBeca INT NOT NULL AUTO_INCREMENT,
-	IdAlumno INT NOT NULL,
-	IdTipo_beca INT NOT NULL,
-	IdPeriodo INT NOT NULL,
-	Estatus BIT,
-	Primary key(IdBeca),
-	Foreign key(IdAlumno) references Alumno(IdAlumno) ,
-	Foreign key(IdTipo_beca) references Tipo_beca(IdTipo_beca) ,
-	Foreign key(IdPeriodo) references Periodo(IdPeriodo) 
-)AUTO_INCREMENT=10000;

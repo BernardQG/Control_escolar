@@ -222,7 +222,7 @@ namespace AppControl_Escolar
 
             llenarCB(tbFn_d, 1, 31);
             llenarCB(tbFn_m, 1, 12);
-            llenarCB(tbFn_a, 1980, 2020);
+            llenarCB(tbFn_a, 1940, 2020);
             cbSexo.Items.Add("F");
             cbSexo.Items.Add("M");
             cbGrado_Estudios.Items.Add("Primaria");

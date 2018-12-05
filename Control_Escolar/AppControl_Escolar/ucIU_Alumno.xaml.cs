@@ -232,7 +232,7 @@ namespace AppControl_Escolar
             llenarCB(tbFi_d, 1, 31);
             llenarCB(tbFn_m, 1, 12);
             llenarCB(tbFi_m, 1, 12);
-            llenarCB(tbFn_a, 1980, 2020);
+            llenarCB(tbFn_a, 1940, 2020);
             llenarCB(tbFi_a, 2010, 2030);
             cbSexo.Items.Add("F");
             cbSexo.Items.Add("M");

@@ -17,7 +17,7 @@ namespace LControl_Escolar
         {
             DataSet _dataSet = new DataSet();
             //Operador ternario ?
-            StoreProcedure = "CALL SP_SELECT_Usuario('" + Id.ToString() + "','" + nombre + "','"+usuario+"','"+contrato.Llave+"');";
+            StoreProcedure = "CALL SP_SELECT_Usuario2('" + Id.ToString() + "','" + nombre + "','"+usuario+"','"+contrato.Llave+"');";
             MySqlCommand comando = new MySqlCommand(StoreProcedure, contrato.conexion);
             MySqlDataAdapter _mySqlDataAdapter = new MySqlDataAdapter();
             _mySqlDataAdapter.SelectCommand = comando;

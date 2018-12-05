@@ -30,8 +30,9 @@ namespace AppControl_Escolar
         public WS_Auditoria_Reference.WS_AuditoriaSoapClient wsAu = new WS_Auditoria_Reference.WS_AuditoriaSoapClient();             
 
         public int IdUsuario;
-        
-        
+  
+
+
         public WPrincipal()
         {
             InitializeComponent();

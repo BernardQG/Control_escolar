@@ -44,7 +44,7 @@ namespace AppControl_Escolar
 
                 gPeriodo.MouseDown += (s, e) =>
                 {
-                    if (acceso == 2)
+                    if (acceso >= 2)
                     {
                         wP.gPrincipal.Children.Clear();
                         wP.gPrincipal.Children.Add(new ucPeriodos(wP));
@@ -59,22 +59,36 @@ namespace AppControl_Escolar
                 };
                 gEmpleados.MouseDown += (s, e) =>
                 {
+                    if (acceso >= 1)
+                    {
+                        wP.gPrincipal.Children.Clear();
+                        wP.gPrincipal.Children.Add(new ucEmpleados(wP));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
 
-                    wP.gPrincipal.Children.Clear();
-                    wP.gPrincipal.Children.Add(new ucEmpleados(wP));
+                  
 
                 };
                 gProfesores.MouseDown += (s, e) =>
                 {
-
-                    wP.gPrincipal.Children.Clear();
-                    wP.gPrincipal.Children.Add(new ucProfesores(wP));
-
+                                     
+                    if (acceso >= 0)
+                    {
+                        wP.gPrincipal.Children.Clear();
+                        wP.gPrincipal.Children.Add(new ucProfesores(wP));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
                 };
                 gUsuarios.MouseDown += (s, e) =>
                 {
 
-                    if (acceso == 2)
+                    if (acceso >= 2)
                     {
                         wP.gPrincipal.Children.Clear();
                         wP.gPrincipal.Children.Add(new ucUsuarios(wP));
@@ -88,11 +102,17 @@ namespace AppControl_Escolar
 
                 gMateria.MouseDown += (s, e) =>
                 {
+                    if (acceso >= 0)
+                    {
+                        wP.gPrincipal.Children.Clear();
+                        wP.gPrincipal.Children.Add(new ucMaterias(wP));
 
-
-                    wP.gPrincipal.Children.Clear();
-                    wP.gPrincipal.Children.Add(new ucMaterias(wP));
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                   
                 };
                 gGrupos.MouseDown += (s, e) =>
                 {

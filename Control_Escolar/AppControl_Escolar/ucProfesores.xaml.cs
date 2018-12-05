@@ -23,15 +23,26 @@ namespace AppControl_Escolar
     {
         private WPrincipal wP;
         private DataGrid dg;
+        private DataSet dss;
+        private int acceso;
         public ucProfesores(WPrincipal wP)
         {
             
             InitializeComponent();
             this.wP = wP;
-            this.dg = dgProfesor;
-            cargarComboBox();
-            cargarDatos();
-            eventos();
+            dss = wP.wssc.SELECT_Admin();
+            if (dss == null)
+            {
+                MessageBox.Show("Error");
+            }
+            else
+            {
+                acceso = Int32.Parse(dss.Tables[0].Rows[0]["Admin"].ToString());
+                this.dg = dgProfesor;
+                cargarComboBox();
+                cargarDatos();
+                eventos();
+            }
         }
 
         public void eventos()
@@ -48,10 +59,19 @@ namespace AppControl_Escolar
             tbBuscar.TextChanged += (s, e) => { if (!cargarDatos()) tbBuscar.Text = string.Empty; };
 
             btnEliminar.Click += (s, e) => {
+
                 if (txtId.Text != "#")
                 {
-                    wP.wsP.DELETE_Profesor(Int32.Parse(txtId.Text)); cargarDatos();
-                    MessageBox.Show("Eliminacion efectuada", "Notificación");
+                    if (acceso >= 2)
+                    {
+                        wP.wsP.DELETE_Profesor(Int32.Parse(txtId.Text)); cargarDatos();
+                        MessageBox.Show("Eliminacion efectuada", "Notificación");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                   
                 }
                 else mensaje1();
             };
@@ -60,18 +80,25 @@ namespace AppControl_Escolar
                 if (txtId.Text != "#")
                 {
 
-                    DataSet _dataSet = wP.wsP.SELECT_IProfesor(Int32.Parse(txtId.Text));
-                    if (_dataSet != null)
+                    if (acceso >= 2)
                     {
-                        DataRow dataRow = _dataSet.Tables[0].Rows[0];
-                        for (int i = 0; i < _dataSet.Tables[0].Columns.Count; i++)
+                        DataSet _dataSet = wP.wsP.SELECT_IProfesor(Int32.Parse(txtId.Text));
+                        if (_dataSet != null)
                         {
-                            m += _dataSet.Tables[0].Columns[i].ColumnName + ": " + dataRow[i].ToString() + Environment.NewLine;
+                            DataRow dataRow = _dataSet.Tables[0].Rows[0];
+                            for (int i = 0; i < _dataSet.Tables[0].Columns.Count; i++)
+                            {
+                                m += _dataSet.Tables[0].Columns[i].ColumnName + ": " + dataRow[i].ToString() + Environment.NewLine;
 
+                            }
+                            MessageBox.Show(m, "Informacion");
                         }
-                        MessageBox.Show(m, "Informacion");
+                        else
+                            MessageBox.Show("Error desconocido", "Error");
+                        
+                        
                     }
-                    else MessageBox.Show("Error desconocido", "Error");
+                    else MessageBox.Show("Necesitas un nivel de acceso mas alto");
                 }
                 else mensaje1();
             };
@@ -82,17 +109,33 @@ namespace AppControl_Escolar
 
             };
             btnNuevo.MouseDown += (s, e) => {
+                if (acceso >= 2)
+                {
+                    wP.gPrincipal.Children.Clear();
+                    wP.gPrincipal.Children.Add(new ucIU_Profesor(wP, "Insertar", null));
+                }
+                else
+                {
+                    MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                }
 
-                wP.gPrincipal.Children.Clear();
-                wP.gPrincipal.Children.Add(new ucIU_Profesor(wP, "Insertar", null));
+               
 
 
             };
             btnActualizar.Click += (s, e) => {
                 if (txtId.Text != "#")
                 {
-                    wP.gPrincipal.Children.Clear();
-                    wP.gPrincipal.Children.Add(new ucIU_Profesor(wP, "Actualizar", Int32.Parse(txtId.Text)));
+                    if (acceso >= 2)
+                    {
+                        wP.gPrincipal.Children.Clear();
+                        wP.gPrincipal.Children.Add(new ucIU_Profesor(wP, "Actualizar", Int32.Parse(txtId.Text)));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                   
                 }
                 else mensaje1();
             };
@@ -102,7 +145,7 @@ namespace AppControl_Escolar
         }
         public void mensaje1()
         {
-            MessageBox.Show("Se requiere de un Id de una empleado para continuar, seleccione un registro", "Notificacion");
+            MessageBox.Show("Se requiere de un Id para continuar, seleccione un registro", "Notificacion");
         }
         public void cargarComboBox()
         {

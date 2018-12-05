@@ -24,18 +24,28 @@ namespace AppControl_Escolar
 
         private WSControl_Escolar_Reference.WSControl_EscolarSoapClient wssc = new WSControl_Escolar_Reference.WSControl_EscolarSoapClient();
         private WPrincipal wP;
+        private DataSet dss;
+        private int acceso;
         public ucAlumnos(WPrincipal wP)
         {
             
             InitializeComponent();
+
             this.wP = wP;
-            dgAlumnos.Items.Clear();
-            cargarComboBox();
-
-
-
-            cargarDatos();
-            eventos();
+            dss = wP.wssc.SELECT_Admin();
+            if (dss == null)
+            {
+                MessageBox.Show("Error");
+            }
+            else
+            {
+                acceso = Int32.Parse(dss.Tables[0].Rows[0]["Admin"].ToString());
+                //wP.btnCuenta.IsEnabled = true;
+                dgAlumnos.Items.Clear();
+                cargarComboBox();
+                cargarDatos();
+                eventos();
+            }
         }
 
         public void eventos() {
@@ -57,8 +67,16 @@ namespace AppControl_Escolar
             btnEliminar.Click += (s, e) => {
                 if (txtId.Text != "#")
                 {
-                    wssc.DELETE_Alumno(Int32.Parse(txtId.Text)); cargarDatos();
-                    MessageBox.Show("Eliminacion efectuada", "Notificación");
+                    if (acceso >= 1)
+                    {
+                        wssc.DELETE_Alumno(Int32.Parse(txtId.Text)); cargarDatos();
+                        MessageBox.Show("Eliminacion efectuada", "Notificación");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                   
                 }
                 else mensaje1();
             };
@@ -67,18 +85,26 @@ namespace AppControl_Escolar
                 if (txtId.Text != "#")
                 {
 
-                    DataSet _dataSet = wssc.SELECT_IAlumno(Int32.Parse(txtId.Text));
-                    if (_dataSet != null)
+                    if (acceso >= 1)
                     {
-                        DataRow dataRow = _dataSet.Tables[0].Rows[0];
-                        for (int i = 0; i < _dataSet.Tables[0].Columns.Count; i++)
+                        DataSet _dataSet = wssc.SELECT_IAlumno(Int32.Parse(txtId.Text));
+                        if (_dataSet != null)
                         {
-                            m += _dataSet.Tables[0].Columns[i].ColumnName + ": " + dataRow[i].ToString() + Environment.NewLine;
+                            DataRow dataRow = _dataSet.Tables[0].Rows[0];
+                            for (int i = 0; i < _dataSet.Tables[0].Columns.Count; i++)
+                            {
+                                m += _dataSet.Tables[0].Columns[i].ColumnName + ": " + dataRow[i].ToString() + Environment.NewLine;
 
+                            }
+                            MessageBox.Show(m, "Informacion de un alumno");
                         }
-                        MessageBox.Show(m, "Informacion de un alumno");
+                        else MessageBox.Show("Error desconocido", "Error");
                     }
-                    else MessageBox.Show("Error desconocido","Error");
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                  
                 }
                 else mensaje1();
             };
@@ -89,17 +115,29 @@ namespace AppControl_Escolar
 
             };
             btnNuevo.MouseDown += (s, e) => {
-                
+                if (acceso >= 1)
+                {
                     wP.gPrincipal.Children.Clear();
                     wP.gPrincipal.Children.Add(new ucIU_Alumno(wP, ucIU_Alumno.Accion.INSERT, null));
-             
-                
+                }
+                else
+                {
+                    MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                }                                         
             };
             btnActualizar.Click += (s, e) => {
                 if (txtId.Text != "#")
                 {
-                    wP.gPrincipal.Children.Clear();
-                    wP.gPrincipal.Children.Add(new ucIU_Alumno(wP, ucIU_Alumno.Accion.UPDATE, Int32.Parse(txtId.Text)));
+                    if (acceso >= 1)
+                    {
+                        wP.gPrincipal.Children.Clear();
+                        wP.gPrincipal.Children.Add(new ucIU_Alumno(wP, ucIU_Alumno.Accion.UPDATE, Int32.Parse(txtId.Text)));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
+                  
                 }
                 else mensaje1();
             };
@@ -107,14 +145,22 @@ namespace AppControl_Escolar
             {
                 if (txtId.Text != "#")
                 {
+                    if (acceso >= 1)
+                    {
+                        if (((DataRowView)dgAlumnos.SelectedItem)["Pagado"].ToString() == "Si")
+                            wssc.UPDATE_Inscripcion(Int32.Parse(txtId.Text), 0);
+                        else
+                            wssc.UPDATE_Inscripcion(Int32.Parse(txtId.Text), 1);
 
-                    if (((DataRowView)dgAlumnos.SelectedItem)["Pagado"].ToString() == "Si")
-                        wssc.UPDATE_Inscripcion(Int32.Parse(txtId.Text), 0);
+                        cargarDatos();
+                        MessageBox.Show("Modificacion efectuada", "Notificación");
+                    }
                     else
-                        wssc.UPDATE_Inscripcion(Int32.Parse(txtId.Text), 1);
+                    {
+                        MessageBox.Show("Necesitas un nivel de acceso mas alto");
+                    }
 
-                    cargarDatos();
-                    MessageBox.Show("Modificacion efectuada", "Notificación");
+                 
                 }
                 else mensaje1();
 

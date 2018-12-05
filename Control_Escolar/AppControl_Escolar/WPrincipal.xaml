@@ -45,7 +45,7 @@
             <Grid x:Name="gPrincipal" Grid.Row="1" Margin="10 10 10 0"/>
             <Grid Grid.Row="2">
                 <TextBlock Text="Usuario: Admin1" Foreground="White"  HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Visibility="Collapsed"/>
-                <TextBlock Text="Hecho por B. Q. G." Foreground="White"  HorizontalAlignment="Right" Margin="15 0" VerticalAlignment="Center"/>
+                <TextBlock Text="Hecho por B. Q. G." Foreground="White"  HorizontalAlignment="Right" Margin="15 0" VerticalAlignment="Center" Visibility="Collapsed"/>
             </Grid>
 
         </Grid>      

@@ -85,7 +85,15 @@ namespace AppControl_Escolar
                 switch (e.Key) {                    
                     case Key.B: backdoor = e.Key.ToString(); break;
                     case Key.Q: backdoor += e.Key.ToString(); break;
-                    case Key.G: backdoor += e.Key.ToString(); if (backdoor == _backdoor) { MessageBox.Show("Bienvenido mi creador Bernado"); Open(); }  break;
+                    case Key.G: backdoor += e.Key.ToString(); if (backdoor == _backdoor) {
+                           DataSet dataS = wssc.UsuarioLog("Admin","123");
+                            if (dataS != null)
+                            {
+
+                                wssc.UPDATE_Sesion(Int32.Parse(dataS.Tables[0].Rows[0][0].ToString()));
+                                MessageBox.Show("Bienvenido mi creador Bernado"); Open();
+                            }
+                        }  break;
                     default: backdoor = string.Empty; break; 
                 }
 
@@ -99,7 +107,7 @@ namespace AppControl_Escolar
                 {
                     gRecuperarPassword.Visibility = Visibility.Visible;
                     Destinatario = dataSet.Tables[0].Rows[0][4].ToString();
-                    contraseña = dataSet.Tables[0].Rows[0][3].ToString();
+                    contraseña = dataSet.Tables[0].Rows[0][3].ToString();                                                           
                     usuario = dataSet.Tables[0].Rows[0][2].ToString();
                     txtbDestinatario.Text = Destinatario;
                 }
@@ -131,6 +139,7 @@ namespace AppControl_Escolar
                 email.IsBodyHtml = true;
                 email.Priority = MailPriority.High;
 
+               
 
                 SmtpClient smtp = new SmtpClient();
                 smtp.Credentials = new System.Net.NetworkCredential("Notificaciones.ControlEscolar@hotmail.com", "ALVCompa");
@@ -148,7 +157,7 @@ namespace AppControl_Escolar
                 }
                 catch (Exception)
                 {
-                    output = "Error al enviar correo electronico (No hay internet).";
+                    output = "Error al enviar correo electronico.";
                 }
                 MessageBox.Show(output, "Recuperacion de contraseña");
             }

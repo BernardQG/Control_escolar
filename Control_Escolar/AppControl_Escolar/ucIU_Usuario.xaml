@@ -22,7 +22,7 @@
                              
                 <TextBox x:Name="tbUsuario" materialDesign:HintAssist.Hint="Usuario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="5"/>
                 <TextBox x:Name="tbPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="160"  VerticalAlignment="Center"  Foreground="WhiteSmoke" Margin="5"/>
-                <ComboBox x:Name="cbAdmin" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Privilegios" Foreground="WhiteSmoke" Margin="5" Width="160"/>                
+                <ComboBox x:Name="cbAdmin" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Privilegios (Nivel de acceso)" Foreground="WhiteSmoke" Margin="5" Width="160"/>                
                 <Button x:Name="btnIU" Content="Agregar" HorizontalAlignment="Center"  Width="100"  Background="#FF3D96B8" VerticalAlignment="Center" Margin="5" FontSize="12"/>
                 </StackPanel>
                 <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center"  Width="100"  Background="#FF3D96B8" VerticalAlignment="Center" Margin="5" FontSize="12"/>
